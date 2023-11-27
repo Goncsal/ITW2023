@@ -11,6 +11,15 @@
     <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="myCSS.css" />
+     <style>
+        .carousel { width: 100%; margin: 1 auto; }
+        .carousel-item { z-index: -100; height: 800px; background-position: center center; background-repeat: no-repeat; background-size: cover; }
+            .carousel-item:nth-child(1) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg'); }
+            .carousel-item:nth-child(2) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Richmond_Olympic_Oval_front_view.jpg'); }
+            .carousel-item:nth-child(3) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg'); }
+            .carousel-item:nth-child(4) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg'); }
+        
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -95,9 +104,9 @@
             </div>
         </div>
     </nav>
-    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/knockout/dist/knockout-latest.min.js"></script>
-    <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="arenaDetails.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
