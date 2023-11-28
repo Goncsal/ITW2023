@@ -1,10 +1,10 @@
 // ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Vari√°veis locais
+    //---Vari·veis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Players');
-    self.displayName = 'NBA Players List';
+    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Teams');
+    self.displayName = 'NBA Teams List';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
@@ -44,7 +44,7 @@ var vm = function () {
 
     //--- Page Events
     self.activate = function (id) {
-        console.log('CALL: getPlayers...');
+        console.log('CALL: getTeams...');
         var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
