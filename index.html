@@ -3,7 +3,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" >
     <title>ITW - NBA Test App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
             height: 640px;
             background-position: center center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: 100% 100%;
         }
 
             .carousel-item:nth-child(1) {
@@ -41,24 +41,35 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html" tabindex="NBA"><img src="../images/NBA_logoH.png" height="24" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html"><i class="fa fa-soccer-ball-o text-warning"></i> Arenas</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html"><i class="fa fa-user-o text-primary"></i> Players</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html"><i class="fa fa-flag-o text-danger"></i> Teams</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html"><i class="fa fa-map-marker text-success"></i> States</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="xxx.html"><i class="fa fa-bookmark-o text-info "></i> Seasons</a></li>
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="xxx.html"><i class="fa fa-magic" title="The party continues..."></i> &middot;&middot;&middot;</a></li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="Nba_logo_PNG3.png" class="logosize"/>         </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 centernavitem">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html"><i class="fa fa-soccer-ball-o text-warning"></i> Arenas</a></li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html"><i class="fa fa-user-o text-primary"></i> Players</a></li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="Teams.html"><i class="fa fa-flag-o text-danger"></i> Teams</a></li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html"><i class="fa fa-map-marker text-success"></i> States</a></li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html"><i class="fa fa-bookmark-o text-info "></i> Seasons</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form>
+              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            </form>
+          </div>
         </div>
-    </nav>
+      </nav>
     <!-- Working Area -->
     <div class="container-xl">
         <div id="myCarousel" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel" data-bs-interval="10000">
@@ -105,6 +116,38 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary">inPlayers</strong>
+                  <h3 class="mb-0">Jogador do Ano</h3>
+                  <div class="mb-1 text-muted">Features</div>
+                  <p class="card-text mb-auto">Steph Curry</p>
+                  <a href="#" class="stretched-link">Dirija-se ao perfil do jogador</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                  <svg class="bd-placeholder-img"  width="200" height="250"  role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect  width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text><image class="img-thumbnail float-left" href="nbathumbnail.png"></image></svg>
+                    
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-success">inArenas</strong>
+                  <h3 class="mb-0">Melhor Arena?</h3>
+                  <div class="mb-1 text-muted">Features</div>
+                  <p class="mb-auto">Arena do ...</p>
+                  <a href="#" class="stretched-link">Aprenda mais sobre a arena</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                  <svg class="bd-placeholder-img" width="200" height="250" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text><image class="img-thumbnail float-left" href="nbathumbnail3.png"></image></svg>
+        
+                </div>
+              </div>
+            </div>
+          </div>
         <p>
             Cursus natoque mus, maecenas inceptos pulvinar commodo semper quis at consequat. Primis tempus potenti dictum imperdiet egestas sociosqu ridiculus congue. Arcu nostra hendrerit leo mollis duis magna mattis phasellus. Nam maecenas ultricies ligula interdum. Nisl ullamcorper torquent phasellus nascetur lobortis augue sagittis cras. Consectetur scelerisque ultrices porttitor maecenas velit augue vulputate enim. Habitant laoreet purus sed risus feugiat posuere magnis condimentum. Libero parturient tempus, augue torquent est scelerisque! Aliquet senectus adipiscing litora condimentum aliquam felis primis lacinia dictum dui porta posuere. Accumsan inceptos risus rhoncus eu facilisis aenean orci primis felis tortor facilisi iaculis. Orci mollis sagittis et facilisis mattis nulla imperdiet imperdiet luctus. Ac donec sollicitudin adipiscing velit hendrerit dolor, vel rutrum elit lacus. Nascetur orci dis inceptos et lacus aliquet varius cursus. Venenatis elit eget himenaeos egestas blandit risus leo. Elementum; elementum nam bibendum mi hac nisi tortor curae;. Penatibus blandit condimentum non volutpat a. Aenean mus diam rutrum sem magnis.
         </p>
@@ -122,7 +165,7 @@
         </p>
     </div>
     <!-- End of Working Area -->
-    <nav class="navbar navbar-light bg-light fixed-bottom">
+    <nav class="navbar navbar-light bg-light opacity-50" >
         <div class="container small">
             <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
             <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>

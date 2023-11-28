@@ -1,6 +1,7 @@
 ﻿body {
     font-family: 'Open Sans', sans-serif;
-    margin: 56px 0 56px 0;
+    margin:0%;
+    background-color: white;
 }
 
 /* button default
@@ -35,4 +36,21 @@
 
 li.page-item a {
     font-size: 0.85rem;
+}
+.nbacolorblue{
+    background-color: #17408B;
+}
+
+.nbacolorred{
+    background-color: #C9082A;
+}
+
+.logosize{
+    width: 250%;
+    margin: 0 0 0 0;
+    height: 30px;
+}
+.centernavitem{
+    margin-right: auto;
+    margin-left: auto;
 }
