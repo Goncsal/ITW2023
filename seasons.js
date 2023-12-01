@@ -1,7 +1,7 @@
 // ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Variáveis locais
+    //---Variï¿½veis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Seasons');
     self.displayName = 'NBA Seasons List';
@@ -28,14 +28,14 @@ var vm = function () {
     self.totalPages = ko.observable(0);
     self.pageArray = function () {
         var list = [];
-        var size = Math.min(self.totalPages(), 9);
+        var size = Math.min(self.totalPages(), 4);
         var step;
         if (size < 9 || self.currentPage() === 1)
             step = 0;
         else if (self.currentPage() >= self.totalPages() - 4)
-            step = self.totalPages() - 9;
+            step = self.totalPages() - 4;
         else
-            step = Math.max(self.currentPage() - 5, 0);
+            step = Math.max(self.currentPage() - 4, 0);
 
         for (var i = 1; i <= size; i++)
             list.push(i + step);
