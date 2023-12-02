@@ -1,9 +1,9 @@
 // ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Variáveis locais
+    //---Variï¿½veis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Player/');
+    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Players/');
     self.displayName = 'NBA Players Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');

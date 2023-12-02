@@ -154,26 +154,20 @@
                     <h2 style="font-weight: bolder;">Capacity</h2>
                     <h6 data-bind="text: Capacity">capacity</h6>
                 </div>
-                <!-- ko if:Opened().length > 0 -->
+                
                 <div class="col-4 text-center">
                     <h2 style="font-weight: bolder;">Opened</h2>
-                    <h6 data-bind="text: Opened"></h6>
+                    <h6 data-bind="text: Opened">No Info</h6> <!--como meter o "no info" como predefinido e atualizar cajo o opened exista-->
                 </div>
-                <!-- /ko -->
-                <!-- ko if:Opened() == undefined -->
-                <div class="col-4 text-center">
-                    <h2 style="font-weight: bolder;">Opened</h2>
-                    <h6 data-bind="text: Opened">No info.</h6>
-                </div>
-                <!-- /ko -->
+
+
             
             </div>
         </div>
         <!-- /ko -->
+        <a href="./arenas.html" class="btn btn-default btn-sm small rounded-5"><i class="fa fa-list"></i> Back to List</a>
         <!-- ko if:Name().length > 0 -->
         <div class="row border-bottom" data-bind="visible: Photo() != '' && Photo() != null">
-            
-            <a href="./arenas.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
             <img class="img-thumbnail" data-bind="attr:{src: Photo}"><br />
             <i class="fa fa-link"></i> [<a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text: Photo" target="_blank"></a>]
         
