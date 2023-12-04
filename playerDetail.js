@@ -12,14 +12,14 @@ var vm = function () {
     self.Height = ko.observable('');
     self.Weight = ko.observable('');
     self.Name = ko.observable('');
-    self.Games = ko.observable('');
-    self.Sex = ko.observable('');
-    self.BornDate = ko.observableArray('');
-    self.BornPlace = ko.observable('');
-    self.DiedDate = ko.observable('');
-    self.DiedPlace = ko.observable('');
+    self.CountryName = ko.observable('');
+    self.CountryId = ko.observable('');
+    self.PositionName = ko.observableArray('');
+    self.PositionId = ko.observable('');
+    self.Birthdate = ko.observable('');
+    self.DraftYear = ko.observable('');
+    self.School = ko.observable('');
     self.Photo = ko.observable('');
-    self.OlympediaLink = ko.observable('');
 
     //--- Page Events
     self.activate = function (id) {
@@ -32,14 +32,14 @@ var vm = function () {
             self.Height(data.Height);
             self.Weight(data.Weight);
             self.Name(data.Name);
-            self.Games(data.Games);
-            self.Sex(data.Sex);
-            self.BornDate(data.BornDate);
-            self.BornPlace(data.BornPlace);
-            self.DiedDate(data.DiedDate);
-            self.DiedPlace(data.DiedPlace);
+            self.CountryName(data.CountryName);
+            self.CountryId(data.CountryId);
+            self.PositionName(data.PositionName);
+            self.PositionId(data.PositionId);
+            self.Birthdate(data.Birthdate);
+            self.DraftYear(data.DraftYear);
+            self.School(data.School);
             self.Photo(data.Photo);
-            self.OlympediaLink(data.OlympediaLink);
         });
     };
 

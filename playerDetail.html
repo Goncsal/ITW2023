@@ -83,14 +83,13 @@
             <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
         </div>
         <div class="row border-bottom g-2">
-            <div class="col-2">State</div><div class="col-10"><a class="nav-link" data-bind="text:StateName, attr: { href:'./stateDetails.html?id=' + StateId }" title="Show State Details"></a></div>
+            <div class="col-2">Draft Year</div><div class="col-10" data-bind="text: DraftYear"></div>           
         </div>
         <div class="row border-bottom g-2">
-            <div class="col-2">Birthdate</div>
-            <div class="col-10"><a class="nav-link" data-bind="date: Birthdate"></a></div>
+            <div class="col-2">Birthdate</div><div class="col-10" data-bind="text: Birthdate"></div>       
         </div>
         <div class="row border-bottom g-2">
-            <div class="col-2">CountryName</div><div class="col-10" data-bind="text: CoutryName"></div>
+            <div class="col-2">CountryName</div><div class="col-10" data-bind="text: CountryName"></div>
         </div>
         <div class="row border-bottom g-2">
             <div class="col-2">Height</div><div class="col-10" data-bind="text: Height"></div>
@@ -99,7 +98,7 @@
             <div class="col-2">Weight</div><div class="col-10" data-bind="text: Weight"></div>
         </div>
         <div class="row border-bottom g-2">
-            <div class="col-2">Position</div><div class="col-10" data-bind="text: Position"></div>
+            <div class="col-2">Position</div><div class="col-10" data-bind="text: PositionName"></div>
         </div>
         
         <div class="row border-bottom g-2" data-bind="visible: Photo() != '' && Photo() != null">
