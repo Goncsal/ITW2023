@@ -23,9 +23,10 @@ var vm = function () {
     self.History = ko.observable('');
 
     //--- Page Events
-    self.activate = function (id) {
+    self.activate = function (id, acronym) {
         console.log('CALL: getTeam...');
-        var composedUri = self.baseUri() + id;
+        var composedUri = self.baseUri() + id + '?acronym=' + acronym;
+        console.log(acronym, "testando ...")
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
@@ -92,11 +93,12 @@ var vm = function () {
     //--- start ....
     showLoading();
     var pg = getUrlParameter('id');
-    console.log(pg);
+    var acrom = getUrlParameter('acronym');
+    console.log(pg, acrom);
     if (pg == undefined)
         self.activate(1);
     else {
-        self.activate(pg);
+        self.activate(pg, acrom);
     }
     console.log("VM initialized!");
 };
