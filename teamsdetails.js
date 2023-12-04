@@ -1,24 +1,26 @@
-// ViewModel KnockOut
+ï»¿// ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Variáveis locais
+    //---Variï¿½veis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/TeamsDetails/');
-    self.displayName = 'NBA Arena Details';
+    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Teams/');
+    self.displayName = 'NBA Teams Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     //--- Data Record
     self.Id = ko.observable('');
+    self.Acronym = ko.observable('');
     self.Name = ko.observable('');
+    self.ConferenceId = ko.observable('');
+    self.ConferenceName = ko.observable('');
+    self.DivisonId = ko.observable('');
+    self.CountryId = ko.observable('');
+    self.DivisionName = ko.observableArray('');
     self.StateId = ko.observable('');
     self.StateName = ko.observable('');
-    self.TeamId = ko.observable('');
-    self.TeamName = ko.observable('');
-    self.TeamAcronym = ko.observable('');
-    self.Location = ko.observable('');
-    self.Capacity = ko.observable('');
-    self.Opened = ko.observable('');
-    self.Photo = ko.observable('');
+    self.City = ko.observable('');
+    self.Logo = ko.observable('');
+    self.History = ko.observable('');
 
     //--- Page Events
     self.activate = function (id) {
@@ -28,20 +30,22 @@ var vm = function () {
             console.log(data);
             hideLoading();
             self.Id(data.Id);
+            self.Acronym(data.Acronym);
             self.Name(data.Name);
+            self.ConferenceId(data.ConferenceId);
+            self.ConferenceName(data.ConferenceName);
+            self.DivisionId(data.DivisionId);
+            self.CountryId(data.CountryId);
+            self.DivisionName(data.DivisionName);
             self.StateId(data.StateId);
             self.StateName(data.StateName);
-            self.TeamId(data.TeamId);
-            self.TeamName(data.TeamName);
-            self.TeamAcronym(data.TeamAcronym);
-            self.Location(data.Location);
-            self.Capacity(data.Capacity);
-            self.Opened(data.Opened);
-            self.Photo(data.Photo);
+            self.City(data.City);
+            self.Logo(data.Logo);
+            self.History(data.History);
         });
     };
 
-    //--- Internal functions
+    //--- Internal Function calling Ajax
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
         return $.ajax({

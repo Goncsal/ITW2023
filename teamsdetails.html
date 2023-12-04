@@ -1,45 +1,16 @@
+ï»¿
 <!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITW 2023/24 - NBA Teams Details</title>
+    <title>ITW 2023/24 - NBA Player Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="myCSS.css" />
-    <style>
-        .carousel {
-            width: 100%;
-            margin: 1 auto;
-        }
-
-        .carousel-item {
-            z-index: -100;
-            height: 800px;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-            .carousel-item:nth-child(1) {
-                background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Beijing_China_Beijing-National-Stadium-02.jpg');
-            }
-
-            .carousel-item:nth-child(2) {
-                background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1b/Richmond_Olympic_Oval_front_view.jpg');
-            }
-
-            .carousel-item:nth-child(3) {
-                background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/34/Rio2016_julho_VilaAtletas_Barra_002_2659_-c-2016_GabrielHeusi_HeusiAction.jpg');
-            }
-
-            .carousel-item:nth-child(4) {
-                background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9d/New_national_stadium_tokyo_1.jpg');
-            }
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
@@ -77,18 +48,12 @@
             <h2 data-bind="text:Name() +' [' + Id() + ']'"></h2>
         </div>
         <!-- ko if:Name().length > 0 -->
-        <div class="row border-bottom g-2">
-            <div class="col-2">Id</div><div class="col-10" data-bind="text: Id"></div>
-        </div>
+
         <div class="row border-bottom g-2">
             <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
         </div>
         <div class="row border-bottom g-2">
-            <div class="col-2">StateName</div><div class="col-10"><a class="nav-link" data-bind="text:StateName, attr: { href:'./stateDetails.html?id=' + StateId }" title="Show State Details"></a></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">History</div>
-            <div class="col-10"><a class="nav-link" data-bind="text:History "></a></div>
+            <div class="col-2">ConferenceId</div><div class="col-10" data-bind="text: ConferenceId"></div>
         </div>
         <div class="row border-bottom g-2">
             <div class="col-2">ConferenceName</div><div class="col-10" data-bind="text: ConferenceName"></div>
@@ -96,11 +61,16 @@
         <div class="row border-bottom g-2">
             <div class="col-2">DivisionId</div><div class="col-10" data-bind="text: DivisionId"></div>
         </div>
-        
         <div class="row border-bottom g-2">
-            <div class="col-2">StateId</div><div class="col-10" data-bind="text: StateId"></div>
+            <div class="col-2">CountryId</div><div class="col-10" data-bind="text: CountryId"></div>
         </div>
-        <!-- /ko -->
+        <div class="row border-bottom g-2">
+            <div class="col-2">DivisionName</div><div class="col-10" data-bind="text: DivisionName"></div>
+        </div>
+        <div class="row border-bottom g-2">
+            <div class="col-2">Position</div>StateId<div class="col-10" data-bind="text: StateId"></div>
+        </div>
+
         <div class="row border-bottom g-2" data-bind="visible: Logo() != '' && Logo() != null">
             <div class="col-2">Logo</div><div class="small col-10">
                 <img class="img-thumbnail" data-bind="attr:{src: Logo}"><br />
@@ -108,7 +78,7 @@
             </div>
         </div>
         <!-- /ko -->
-        <a href="./teams.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+        <a href="./teams.htmls" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -128,7 +98,7 @@
     <!-- End of Work Area -->
     <nav class="navbar navbar-light bg-light fixed-bottom">
         <div class="container small">
-            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
+            <div class="navbar-text">&copy;  Introduï¿½ï¿½o as Tecnologias Web - 2023/24</div>
             <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
             <div class="navbar-nav">
                 <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
@@ -140,6 +110,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="teamsDetails.js"></script>
+    <script src="teamsdetails.js"></script>
 </body>
 </html>
