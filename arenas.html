@@ -10,73 +10,132 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="myCSS.css" />
-</head>
-<body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><img src="Nba_logo_PNG3.png" class="logosize"/>         </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
     
-          <div class="collapse navbar-collapse" id="navbarsExample04">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 centernavitem">
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html"><i class="fa fa-soccer-ball-o text-warning"></i> Arenas</a></li>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html"><i class="fa fa-user-o text-primary"></i> Players</a></li>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="Teams.html"><i class="fa fa-flag-o text-danger"></i> Teams</a></li>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html"><i class="fa fa-map-marker text-success"></i> States</a></li>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html"><i class="fa fa-bookmark-o text-info "></i> Seasons</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form>
-              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-            </form>
-          </div>
-        </div>
-      </nav>
+    <link rel="stylesheet" href="index.css" />
+
+<style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    .logosize{
+  width: 150%;
+  margin: 0 0 0 0;
+  height: 25px;
+    }
+    li{
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    ul{
+      margin-right: 100px;;
+    }
+    .navbar-logo{
+        float:left;
+        position: absolute;
+        padding: 1%;
+        }
+    .navbar-search{
+        float:right;
+        position: absolute;
+        padding: 1%;
+    }
+    body{
+      /*background-image: url("https://wallpapers-hub.art/wallpaper-images/128139.jpg");*/
+      background-image: url("nbabgfiltered2.png");
+      background-size: cover;
+    }
+
+  </style>
+  </head>
+<body class="h-100  text-center text-white bg-dark bg-gradient-gray">
+    <div class="navbar-logo navbar-brand">
+        <a href="index.html"><img src="Nba_logo_PNG3.png" alt="logo" height="60" width="140" /></a>
+    </div>
+        
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <nav class="navbar navbar-expand-md navbar-dark bg-opacity-10" aria-label="navbar">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 centernavitem">
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html" style="color: white"><i class="fa fa-soccer-ball-o text-warning"></i> Arenas</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html" style="color: white"><i class="fa fa-user-o text-primary"></i> Players</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="Teams.html" style="color: white"><i class="fa fa-flag-o text-danger"></i> Teams</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html" style="color: white"><i class="fa fa-map-marker text-success"></i> States</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html" style="color: white"><i class="fa fa-bookmark-o text-info "></i> Seasons</a></li>
+                                <li class="nav-item dropdown">
+                                
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; margin-top: 20px;"></a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    
+    
     <!-- Working Area -->
     <div class="container">
         <div class="border-bottom py-2 mb-2">
             <h2 data-bind="text:displayName"></h2>
+            
         </div>
+        <input class="form-control" style="float: right; padding: 0; margin-top: 0; margin-bottom: auto;text-align: center;" type="text" placeholder="Search" aria-label="Search">
         <!-- ko if:records().length > 0 -->
+        
         <div class="row small">
             <p class=" col-4 mr-auto pt-2">
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
                 <span data-bind="html: 'Games: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
+            
             <div class="col-8 my-0 pt-3">
-                <ul class="pagination float-end">
+                <ul class="pagination float-end" style="margin: 0%;padding: 0;">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
-                    <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './arenas.html?page=' + '1',  rel:'prev'}">⇤</a></li>
-                    <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './arenas.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
+                    <li class="page-item float-end" style="margin: 0%;padding: 0;"><a class="page-link" title="First Page" data-bind="attr: { href: './arenas.html?page=' + '1',  rel:'prev'}">⇤</a></li>
+                    <li class="page-item float-end" style="margin: 0%;padding: 0;"><a class="page-link" title="Previous Page" data-bind="attr: { href: './arenas.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
                     <!-- /ko -->
                     <!-- ko foreach: pageArray()-->
                     <!-- ko if:$data == $parent.currentPage() -->
-                    <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
+                    <li class="active page-item" style="margin: 0%;padding: 0;"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
                     <!-- /ko -->
                     <!-- ko if:$data != $parent.currentPage() -->
-                    <li class="page-item"><a class="page-link" data-bind="attr: { href: './arenas.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
+                    <li class="page-item" style="margin: 0%;padding: 0;"><a class="page-link" data-bind="attr: { href: './arenas.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
                     <!-- /ko -->
                     <!-- /ko -->
                     <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
-                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './arenas.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './arenas.html?page=' + totalPages() }">⇥</a></li>
+                    <li class="page-item" style="margin: 0%;padding: 0;"><a class="page-link" title="Next Page" data-bind="attr: { href: './arenas.html?page=' + nextPage(), rel:'next' }">→</a></li>
+                    <li class="page-item" style="margin: 0%;padding: 0;"><a class="page-link" title="Last Page" data-bind="attr: { href: './arenas.html?page=' + totalPages() }">⇥</a></li>
                     <!-- /ko -->
                 </ul>
             </div>
         </div>
         <!-- /ko -->
 
-        <table class="table table-striped table-sm small">
-            <thead class="table-secondary">
+
+        <table class="table table-striped table-hover table-borderless ">
+            <thead class="table-secondary" style="border-radius: 20px;">
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
@@ -117,6 +176,7 @@
         </div>
     </div>
     <!-- End of Working Area -->
+    <!--
     <nav class="navbar navbar-light bg-light fixed-bottom">
         <div class="container small">
             <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
@@ -126,10 +186,11 @@
             </div>
         </div>
     </nav>
+    -->
     <script src="https://kit.fontawesome.com/a62159914b.js" crossorigin="anonymous"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="arenas.js"></script>
 </body>
 </html>
