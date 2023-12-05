@@ -105,33 +105,33 @@
             <h2 data-bind="text:Name() +' [' + Id() + ']'"></h2>
         </div>
         <div class="container-fluid">
-            <a href="./teams.html" class="btn btn-default btn-sm small rounded-5 mb-3"><i class="fa fa-list"></i> Back to List</a>
+            <a href="./players.html" class="btn btn-default btn-sm small rounded-5 mb-3"><i class="fa fa-list"></i> Back to List</a>
             <div>
                 <div class="row mb-6 ">
                     <div class="col-6">
                         <div class="row">
-                            <h2 style="font-weight: bolder;">Acronym</h2>
-                            <span data-bind="text: Acronym"></span>
+                            <h2 style="font-weight: bolder;">Id</h2>
+                            <span data-bind="text: Id"></span>
                         </div>
                         <div class="row">
                             <h2 style="font-weight: bolder;">Name</h2>
-                            <h6 data-bind="text: Name"></h6> <!--se deixar assim n esquecer de meter como <a> para o state e team details-->
+                            <h6 data-bind="text: Acronym"></h6> <!--se deixar assim n esquecer de meter como <a> para o state e team details-->
                         </div>
                         <div class="row">
                             <h2 style="font-weight: bolder;">City</h2>
                             <h6 data-bind="text:City"></h6>
                         </div>
                         <div class="row">
-                            <h2 style="font-weight: bolder;">State</h2>
-                            <h6 data-bind="text: State"></h6>
+                            <h2 style="font-weight: bolder;">DivisionName</h2>
+                            <h6 data-bind="text: DivisionName"></h6>
                         </div>
                         <div class="row">
-                            <h2 style="font-weight: bolder;">Conference</h2>
-                            <h6 data-bind="text: Conference"></h6>
+                            <h2 style="font-weight: bolder;">StateName</h2>
+                            <h6 data-bind="text: StateName"></h6>
                         </div>
                         <div class="row">
-                            <h2 style="font-weight: bolder;">Division</h2>
-                            <h6 data-bind="text: Division"></h6>
+                            <h2 style="font-weight: bolder;">StateId</h2>
+                            <h6 data-bind="text: Weight"></h6>
                         </div>
 
                         <div class="row">
@@ -140,15 +140,15 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="row" data-bind="visible: Logo() != '' && Logo() != null">
-                            <img class="img-thumbnail" data-bind="attr:{src: Logo}" style="width: 70%; height: 500px;"><br />
+                        <div class="row" data-bind="visible: Photo() != '' && Photo() != null">
+                            <img class="img-thumbnail" data-bind="attr:{src: Photo}" style="width: 70%; height: 500px;"><br />
                             <i class="fa fa-link"></i>
                         </div>
 
                     </div>
                     <br>
                     <br>
-                   [<a class="link-dark text-decoration-none" data-bind="attr: { href: Logo }, text: Logo" target="_blank"></a>
+                    <a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text: Photo" target="_blank"></a>]
                 </div>
             </div>
         </div>

@@ -24,9 +24,10 @@ var vm = function () {
 
     //--- Page Events
     self.activate = function (id, acronym) {
-        console.log('CALL: getTeam...');
+        console.log('CALL: getTeamDetails...');
         var composedUri = self.baseUri() + id + '?acronym=' + acronym;
         console.log(acronym, "testando ...")
+        console.log(composedUri)
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
@@ -82,10 +83,15 @@ var vm = function () {
             i;
 
         for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-
+            sParameterName = sURLVariables[i].split(/[=?]/);
+            console.log(sParameterName)
+            
             if (sParameterName[0] === sParam) {
                 return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+
+            if (sParameterName[2] === sParam) {
+                return sParameterName[3] === undefined ? true : decodeURIComponent(sParameterName[3]);
             }
         }
     };
@@ -96,7 +102,7 @@ var vm = function () {
     var acrom = getUrlParameter('acronym');
     console.log(pg, acrom);
     if (pg == undefined)
-        self.activate(1);
+        self.activate(1,1);
     else {
         self.activate(pg, acrom);
     }
