@@ -3,7 +3,9 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
+    self.nameplayer = ko.observable("")
     self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Arenas');
+    self.urlsearch = ko.observable('http://192.168.160.58/NBA/API/Arenas/Search?')
     self.displayName = 'NBA Arenas List';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
@@ -127,5 +129,4 @@ $(document).ready(function () {
 });
 
 $(document).ajaxComplete(function (event, xhr, options) {
-    $("#myModal").modal('hide');
-})
+    $("#myModal").modal('hide');});
