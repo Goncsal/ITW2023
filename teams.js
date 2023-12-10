@@ -1,8 +1,9 @@
 // ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Variáveis locais
+    //---Variï¿½veis locais
     var self = this;
+    self.valor = ko.observable("")
     self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Teams');
     self.displayName = 'NBA Teams List';
     self.error = ko.observable('');
@@ -40,6 +41,42 @@ var vm = function () {
         for (var i = 1; i <= size; i++)
             list.push(i + step);
         return list;
+    };
+    self.search = function() {
+        if ($("#srch").val() === "") {
+            //showLoading();
+            var pg = getUrlParameter('page');
+            console.log(pg);
+            if (pg == undefined)
+                self.activate(1);
+            else {
+                self.activate(pg);
+            }
+        } else {
+            var changeUrl = 'http://192.168.160.58/NBA/API/Teams/Search?q=' + $("#srch").val();
+            self.teamslist = [];
+        ajaxHelper(changeUrl, 'GET').done(function(data) {
+            console.log(data.length)
+            if (data.length == 0) {
+                self.value = "";
+            }
+            self.totalPages(1)
+            console.log(data);
+            //showLoading();
+            self.records(data);
+            self.totalRecords(data.length);
+            
+           // hideLoading();
+            for (var i in data) {
+                self.teamslist.push(data[i]);
+                }
+            });
+        };
+    };
+
+    self.onChange = function() {
+        self.search();
+        return true;
     };
 
     //--- Page Events

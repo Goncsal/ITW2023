@@ -3,6 +3,8 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
+    self.valor = ko.observable("")
+    self.nameplayer = ko.observable("")
     self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Arenas');
     self.displayName = 'NBA Arenas List';
     self.error = ko.observable('');
@@ -41,6 +43,42 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+    self.search = function() {
+        if ($("#srch").val() === "") {
+            //showLoading();
+            var pg = getUrlParameter('page');
+            console.log(pg);
+            if (pg == undefined)
+                self.activate(1);
+            else {
+                self.activate(pg);
+            }
+        } else {
+            var changeUrl = 'http://192.168.160.58/NBA/API/Arenas/Search?q=' + $("#srch").val();
+            self.arenaslist = [];
+        ajaxHelper(changeUrl, 'GET').done(function(data) {
+            console.log(data.length)
+            if (data.length == 0) {
+                self.value = "";
+            }
+            self.totalPages(1)
+            console.log(data);
+            //showLoading();
+            self.records(data);
+            self.totalRecords(data.length);
+            
+           // hideLoading();
+            for (var i in data) {
+                self.arenaslist.push(data[i]);
+                }
+            });
+        };
+    };
+
+    self.onChange = function() {
+        self.search();
+        return true;
+    };
 
     //--- Page Events
     self.activate = function (id) {
@@ -48,7 +86,7 @@ var vm = function () {
         var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
-            hideLoading();
+            //hideLoading();
             self.records(data.Records);
             self.currentPage(data.CurrentPage);
             self.hasNext(data.HasNext);
@@ -71,7 +109,7 @@ var vm = function () {
             data: data ? JSON.stringify(data) : null,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("AJAX Call[" + uri + "] Fail...");
-                hideLoading();
+                //hideLoading();
                 self.error(errorThrown);
             }
         });
@@ -81,7 +119,7 @@ var vm = function () {
         const start = Date.now();
         while (Date.now() - start < milliseconds);
     }
-
+/*
     function showLoading() {
         $("#myModal").modal('show', {
             backdrop: 'static',
@@ -92,7 +130,7 @@ var vm = function () {
         $('#myModal').on('shown.bs.modal', function (e) {
             $("#myModal").modal('hide');
         })
-    }
+    }*/
 
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),
@@ -110,7 +148,7 @@ var vm = function () {
     };
 
     //--- start ....
-    showLoading();
+    //showLoading();
     var pg = getUrlParameter('page');
     console.log(pg);
     if (pg == undefined)
@@ -127,5 +165,4 @@ $(document).ready(function () {
 });
 
 $(document).ajaxComplete(function (event, xhr, options) {
-    $("#myModal").modal('hide');
-})
+    $("#myModal").modal('hide');});
