@@ -43,6 +43,7 @@ var vm = function () {
         return list;
     };
     self.search = function() {
+        $("#srch").val() = $("#srch").val().replace(/\s{2,}/g, ' ');
         if ($("#srch").val() === "") {
             //showLoading();
             var pg = getUrlParameter('page');
