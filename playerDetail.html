@@ -104,52 +104,70 @@
         <div class="container-fluid">
             <a href="./players.html" class="btn btn-default btn-sm small rounded-5 mb-3"><i class="fa fa-list"></i> Back to List</a>
             <div>
-            <div class="row mb-6 ">
-                <div class="col-6">
-                    <div class="row">
-                        <h2 style="font-weight: bolder;">Name</h2>
-                        <span data-bind="text: Name"></span>
-                    </div>
-                    <div class="row">
-                        <h2 style="font-weight: bolder;">Draft Year</h2>
-                        <h6 data-bind="text: DraftYear"></h6> <!--se deixar assim n esquecer de meter como <a> para o state e team details-->
-                    </div>
-                    <div class="row">
-                        <h2 style="font-weight: bolder;">Birthdate</h2>
-                        <h6 data-bind="text:Birthdate"></h6>
-                    </div>
-                    <div class="row">
-                        <h2 style="font-weight: bolder;">Country Name</h2>
-                        <h6 data-bind="text: CountryName"></h6>
-                    </div>
-                    <div class="row">
-                        <h2 style="font-weight: bolder;">Height</h2>
-                        <h6 data-bind="text: Height"></h6>
-                    </div>
-                    <div class="row">
-                        <h2 style="font-weight: bolder;">Weight</h2>
-                        <h6 data-bind="text: Weight"></h6>
-                    </div>
-                    
-                    <div class="row">
-                        <h2 style="font-weight: bolder;">Position</h2>
-                        <h6 data-bind="text: PositionName"></h6> <!--como meter o "no info" como predefinido e atualizar cajo o opened exista-->
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="row" data-bind="visible: Photo() != '' && Photo() != null">
-                        <img class="img-fluid" data-bind="attr:{src: Photo}"><br />
-                        <i class="fa fa-link"></i> 
-                    </div>
+                <div class="row mb-6 ">
+                    <div class="col-6">
+                        <div class="row">
+                            <h2 style="font-weight: bolder;">Name</h2>
+                            <span data-bind="text: Name"></span>
+                        </div>
+                        <div class="row">
+                            <h2 style="font-weight: bolder;">Draft Year</h2>
+                            <h6 data-bind="text: DraftYear"></h6> <!--se deixar assim n esquecer de meter como <a> para o state e team details-->
+                        </div>
+                        <div class="row">
+                            <h2 style="font-weight: bolder;">Birthdate</h2>
+                            <h6 data-bind="text:Birthdate"></h6>
+                        </div>
+                        <div class="row">
+                            <h2 style="font-weight: bolder;">Country Name</h2>
+                            <h6 data-bind="text: CountryName"></h6>
+                        </div>
+                        <div class="row">
+                            <h2 style="font-weight: bolder;">Height</h2>
+                            <h6 data-bind="text: Height"></h6>
+                        </div>
+                        <div class="row">
+                            <h2 style="font-weight: bolder;">Weight</h2>
+                            <h6 data-bind="text: Weight"></h6>
+                        </div>
 
+                        <div class="row">
+                            <h2 style="font-weight: bolder;">Position</h2>
+                            <h6 data-bind="text: PositionName"></h6> <!--como meter o "no info" como predefinido e atualizar cajo o opened exista-->
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row" data-bind="visible: Photo() != '' && Photo() != null">
+                            <img class="img-fluid" data-bind="attr:{src: Photo}"><br />
+                            <i class="fa fa-link"></i>
+                        </div>
+
+                    </div>
+                    <br>
+                    <br>
+                    <a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text: Photo" target="_blank"></a>
                 </div>
-                <br>
-                <br>
-                <a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text: Photo" target="_blank"></a>]
-            </div>
             </div>
         </div>
-        
+        <h1>Total Teams Played</h1>
+
+        <div class="row g-1" data-bind="foreach: Teams">
+            <div class="col-3">
+                <div class="border rounded py-1 px-2 small">
+                    <i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span>
+
+                </div>
+            </div>
+        </div>
+        <h1>Total Seasons Played</h1>
+        <div class="row g-1" data-bind="foreach: Seasons">
+            <div class="col-3">
+                <div class="border rounded py-1 px-2 small">
+                    <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span>
+
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /ko -->
     <!-- Modal -->

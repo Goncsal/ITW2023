@@ -9,17 +9,10 @@ var vm = function () {
     self.passingMessage = ko.observable('');
     //--- Data Record
     self.Id = ko.observable('');
-    self.Height = ko.observable('');
-    self.Weight = ko.observable('');
+    self.Flag = ko.observable('');
     self.Name = ko.observable('');
-    self.CountryName = ko.observable('');
-    self.CountryId = ko.observable('');
-    self.PositionName = ko.observableArray('');
-    self.PositionId = ko.observable('');
-    self.Birthdate = ko.observable('');
-    self.DraftYear = ko.observable('');
-    self.School = ko.observable('');
-    self.Photo = ko.observable('');
+    self.Teams = ko.observable([]);
+    self.Arenas = ko.observable([]);
 
     //--- Page Events
     self.activate = function (id) {
@@ -29,17 +22,10 @@ var vm = function () {
             console.log(data);
             hideLoading();
             self.Id(data.Id);
-            self.Height(data.Height);
-            self.Weight(data.Weight);
+            self.Flag(data.Flag);
             self.Name(data.Name);
-            self.CountryName(data.CountryName);
-            self.CountryId(data.CountryId);
-            self.PositionName(data.PositionName);
-            self.PositionId(data.PositionId);
-            self.Birthdate(data.Birthdate);
-            self.DraftYear(data.DraftYear);
-            self.School(data.School);
-            self.Photo(data.Photo);
+            self.Arenas(data.Arenas);
+            self.Teams(data.Teams);
         });
     };
 

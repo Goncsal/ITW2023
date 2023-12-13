@@ -20,6 +20,8 @@ var vm = function () {
     self.DraftYear = ko.observable('');
     self.School = ko.observable('');
     self.Photo = ko.observable('');
+    self.Seasons = ko.observableArray([]);
+    self.Teams = ko.observableArray([]);
 
     //--- Page Events
     self.activate = function (id) {
@@ -40,6 +42,8 @@ var vm = function () {
             self.DraftYear(data.DraftYear);
             self.School(data.School);
             self.Photo(data.Photo);
+            self.Seasons(data.Seasons);
+            self.Teams(data.Teams);
         });
     };
 
