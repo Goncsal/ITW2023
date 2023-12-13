@@ -1,31 +1,31 @@
-﻿// ViewModel KnockOut
+// ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Variáveis locais
+    //---Vari�veis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Conferences/');
-    self.displayName = 'NBA Arena Details';
+    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Positions/');
+    self.displayName = 'NBA Positions Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     //--- Data Record
     self.Id = ko.observable('');
     self.Name = ko.observable('');
-    self.Divisions = ko.observable('');
-    self.Teams = ko.observableArray([]);
-    self.Logo = ko.observable('');
+    
+    self.Players = ko.observableArray([]);
+    
 
     //--- Page Events
     self.activate = function (id) {
-        console.log('CALL: getConference...');
+        console.log('CALL: getPositions...');
         var composedUri = self.baseUri() + id;
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
             self.Id(data.Id);
             self.Name(data.Name);
-            self.Divisions(data.Divisions);
-            self.Teams(data.Teams);
-            self.Logo(data.Logo);
+            
+            self.Players(data.Players);
+            
         });
     };
 

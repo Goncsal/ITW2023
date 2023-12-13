@@ -1,15 +1,66 @@
-<!doctype html>
+ï»¿<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ITW 2023/24 - NBA Teams Details</title>
+    <title>ITW 2023/24 - NBA Conference Details</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="myCSS.css" />
+    <link rel="stylesheet" href="index.css" />
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .logosize {
+            width: 150%;
+            margin: 0 0 0 0;
+            height: 25px;
+        }
+
+        li {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        ul {
+            margin-right: 100px;
+            ;
+        }
+
+        .navbar-logo {
+            float: left;
+            position: absolute;
+            padding: 1%;
+        }
+
+        .navbar-search {
+            float: right;
+            position: absolute;
+            padding: 1%;
+        }
+
+        body {
+            /*background-image: url("https://wallpapers-hub.art/wallpaper-images/128139.jpg");*/
+            background-image: url("nbabgfiltered2.png");
+            background-size: cover;
+        }
+    </style>
 </head>
 <body class="h-100  text-center text-white bg-dark bg-gradient-gray">
     <div class="navbar-logo navbar-brand">
@@ -60,7 +111,7 @@
             <div class="col-2">Id</div><div class="col-10" data-bind="text: Id"></div>
         </div>
         <div class="row border-bottom g-2">
-            <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
+            <div class="col-2">Conference Name</div><div class="col-10" data-bind="text: Name"></div>
         </div>
 
         <div class="row border-bottom g-2" data-bind="visible: Logo() != '' && Logo() != null">
@@ -83,12 +134,15 @@
         <a href="Teams.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
         <!-- Modal -->
     </div>
+    </div>
+    <!-- /ko -->
+    <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="../images/NBA_logo.png" height="30" /> Loading data...
+                        <img src="../images/NBA_logoH.png" height="30" /> Loading data...
                     </h5>
                 </div>
                 <div class="modal-body text-center">
@@ -98,15 +152,18 @@
         </div>
     </div>
     <!-- End of Work Area -->
+    <!--
     <nav class="navbar navbar-light bg-light fixed-bottom">
         <div class="container small">
-            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2023/24</div>
+            <div class="navbar-text">&copy;  Introduï¿½ï¿½o as Tecnologias Web - 2023/24</div>
             <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
             <div class="navbar-nav">
                 <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
             </div>
         </div>
-    </nav>
+    </nav>-->
+
+    <script src="https://kit.fontawesome.com/a62159914b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
