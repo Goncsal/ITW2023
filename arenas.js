@@ -3,7 +3,7 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.valor = ko.observable("")
+    self.value = ko.observable("")
     self.nameplayer = ko.observable("")
     self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Arenas');
     self.displayName = 'NBA Arenas List';
@@ -48,14 +48,13 @@ var vm = function () {
             //showLoading();
             var pg = getUrlParameter('page');
             console.log(pg);
-            if (pg == undefined)
+            if (pg == undefined){
                 self.activate(1);
-            else {
+            }else {
                 self.activate(pg);
             }
         } else {
             var changeUrl = 'http://192.168.160.58/NBA/API/Arenas/Search?q=' + $("#srch").val();
-            self.arenaslist = [];
         ajaxHelper(changeUrl, 'GET').done(function(data) {
             console.log(data.length)
             if (data.length == 0) {
@@ -66,11 +65,7 @@ var vm = function () {
             //showLoading();
             self.records(data);
             self.totalRecords(data.length);
-            
            // hideLoading();
-            for (var i in data) {
-                self.arenaslist.push(data[i]);
-                }
             });
         };
     };
