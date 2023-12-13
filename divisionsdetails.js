@@ -1,35 +1,35 @@
-ï»¿// ViewModel KnockOut
+// ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Variï¿½veis locais
+    //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/States/');
-    self.displayName = 'NBA States Details';
+    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Divisions/');
+    self.displayName = 'NBA Divisions Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     //--- Data Record
     self.Id = ko.observable('');
-    self.Flag = ko.observable('');
     self.Name = ko.observable('');
-    self.Teams = ko.observable([]);
-    self.Arenas = ko.observable([]);
+    
+    self.Teams = ko.observableArray([]);
+    self.Logo = ko.observable('');
 
     //--- Page Events
     self.activate = function (id) {
-        console.log('CALL: getStates...');
+        console.log('CALL: getDivisions...');
         var composedUri = self.baseUri() + id;
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
             self.Id(data.Id);
-            self.Flag(data.Flag);
             self.Name(data.Name);
-            self.Arenas(data.Arenas);
+            
             self.Teams(data.Teams);
+            self.Logo(data.Logo);
         });
     };
 
-    //--- Internal Function calling Ajax
+    //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
         return $.ajax({

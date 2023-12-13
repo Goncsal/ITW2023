@@ -13,7 +13,7 @@ var vm = function () {
     self.Name = ko.observable('');
     self.ConferenceId = ko.observable('');
     self.ConferenceName = ko.observable('');
-    self.DivisonId = ko.observable('');
+    self.DivisionId = ko.observable('');
     self.CountryId = ko.observable('');
     self.DivisionName = ko.observableArray('');
     self.StateId = ko.observable('');
@@ -21,6 +21,8 @@ var vm = function () {
     self.City = ko.observable('');
     self.Logo = ko.observable('');
     self.History = ko.observable('');
+    self.Players = ko.observableArray([]);
+    self.Seasons = ko.observableArray([]);
 
     //--- Page Events
     self.activate = function (id, acronym) {
@@ -44,6 +46,8 @@ var vm = function () {
             self.City(data.City);
             self.Logo(data.Logo);
             self.History(data.History);
+            self.Players(data.Players);
+            self.Seasons(data.Seasons);
         });
     };
 

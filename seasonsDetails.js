@@ -4,14 +4,15 @@ var vm = function () {
     //---Vari�veis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Seasons/');
+    
     self.displayName = 'NBA Seasons Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     //--- Data Record
     self.Id = ko.observable('');
     self.Season = ko.observable('');
-    self.Teams = ko.observable([]);
-    self.Players = ko.observable([]);
+    self.Teams = ko.observableArray([]);
+    self.Players = ko.observableArray([]);
 
 
     //--- Page Events
@@ -27,7 +28,7 @@ var vm = function () {
             self.Players(data.Players);
         });
     };
-
+    
     //--- Internal Function calling Ajax
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
