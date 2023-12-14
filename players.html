@@ -52,6 +52,8 @@
       /*background-image: url("https://wallpapers-hub.art/wallpaper-images/128139.jpg");*/
       background-image: url("nbabgfiltered2.png");
       background-size: cover;
+      background-attachment: fixed;
+      background-position: center center;
     }
 
   </style>
@@ -95,16 +97,26 @@
         </header>
     </div>
     <!-- Working Area -->
-    <div class="container">
-        <div class="border-bottom py-2 mb-2">
-            <h2 data-bind="text:displayName"></h2>
+    
+    <div class="container vh-100">
+        <div class=" py-2 mb-2">
+            <input class="form-control-sm" style="float: right; padding: 0; margin-top: 1%; margin-bottom: 0;text-align: center;width: 20%;" type="text" placeholder="Search" aria-label="Search"  id="srch" data-bind="event: {input: onChange}, text: value;">
+            <h2 data-bind="text:displayName" style="float: left;"></h2>
+
         </div>
-        <input class="form-control" style="float: right; padding: 0; margin-top: 0; margin-bottom: auto;text-align: center;" type="text" placeholder="Search" aria-label="Search" id="srch" data-bind="event: {keydown: onChange}, value: valor">
+        <br>
+        <hr class="border-3">
+        
+        <!-- ko if:records().length === 0 -->
+        <p class="mt-5 text-center">
+            No Results Found.
+        </p>
+        <!-- /ko -->
         <!-- ko if:records().length > 0 -->
         <div class="row small">
-            <p class=" col-4 mr-auto pt-2">
+            <p class=" col-4 mr-auto pt-2" style="text-align: left;" >
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
-                <span data-bind="html: 'Players: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
+                <span data-bind="html: 'Teams: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
             <div class="col-8 my-0 pt-3">
                 <ul class="pagination float-end" style="margin: 0%;padding: 0;">
@@ -130,6 +142,7 @@
         <!-- /ko -->
 
         <table class="table table-striped table-sm small">
+            <!-- ko if:records().length > 0 -->
             <thead class="table-secondary">
                 <tr>
                     <th scope="col">Id</th>
@@ -140,11 +153,17 @@
                     <th scope="col" class="text-right"></th>
                 </tr>
             </thead>
+            <!-- /ko -->
             <tbody data-bind="foreach: records">
                 <tr>
                     <td class="align-middle" data-bind="text:Id"></td>
                     <td class="align-middle" data-bind="text:Name"></td>
-                    <td class="align-middle"><a class="nav-link" data-bind="text:Birthdate, attr: { href:'./api/Players.html?id=' + Id }" title="Show State Details"></a></td>
+                    <!-- ko if: Birthdate != null -->
+                    <td class="align-middle"><a class="nav-link" data-bind="text:Birthdate.substring(0,10),attr: { href:'./api/Players.html?id=' + Id }" title="Show State Details"></a></td>
+                    <!--/ko -->
+                    <!-- ko if: Birthdate == null -->
+                    <td class="align-middle"><a class="nav-link" data-bind="text:Birthdate,attr: { href:'./api/Players.html?id=' + Id }" title="Show State Details"></a></td>
+                    <!--/ko -->
                     <td class="align-middle"><a class="nav-link" data-bind="text:CountryName, attr: { href:'./api/Players.html?id=' + Id }" title="Show Team Details"></a></td>
                     <td class="align-middle" data-bind="text:DraftYear"></td>
                     <td class="text-end">

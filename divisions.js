@@ -42,42 +42,7 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
-    self.search = function () {
-        if ($("#srch").val() === "") {
-            //showLoading();
-            var pg = getUrlParameter('page');
-            console.log(pg);
-            if (pg == undefined)
-                self.activate(1);
-            else {
-                self.activate(pg);
-            }
-        } else {
-            var changeUrl = 'http://192.168.160.58/NBA/API/Divisions/Search?q=' + $("#srch").val();
-            self.Stateslist = [];
-            ajaxHelper(changeUrl, 'GET').done(function (data) {
-                console.log(data.length)
-                if (data.length == 0) {
-                    self.value = "";
-                }
-                self.totalPages(1)
-                console.log(data);
-                //showLoading();
-                self.records(data);
-                self.totalRecords(data.length);
 
-                // hideLoading();
-                for (var i in data) {
-                    self.Stateslist.push(data[i]);
-                }
-            });
-        };
-    };
-
-    self.onChange = function () {
-        self.search();
-        return true;
-    };
 
     //--- Page Events
     self.activate = function (id) {

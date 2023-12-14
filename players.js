@@ -3,7 +3,7 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.valor = ko.observable("")
+    self.value = ko.observable("")
     self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Players');
     self.displayName = 'NBA Players List';
     self.error = ko.observable('');
@@ -43,19 +43,17 @@ var vm = function () {
         return list;
     };
     self.search = function() {
-        $("#srch").val() = $("#srch").val().replace(/\s{2,}/g, ' ');
         if ($("#srch").val() === "") {
             //showLoading();
             var pg = getUrlParameter('page');
             console.log(pg);
-            if (pg == undefined)
+            if (pg == undefined){
                 self.activate(1);
-            else {
+            }else {
                 self.activate(pg);
             }
         } else {
             var changeUrl = 'http://192.168.160.58/NBA/API/Players/Search?q=' + $("#srch").val();
-            self.playerslist = [];
         ajaxHelper(changeUrl, 'GET').done(function(data) {
             console.log(data.length)
             if (data.length == 0) {
@@ -66,11 +64,7 @@ var vm = function () {
             //showLoading();
             self.records(data);
             self.totalRecords(data.length);
-            
            // hideLoading();
-            for (var i in data) {
-                self.playerslist.push(data[i]);
-                }
             });
         };
     };
@@ -79,6 +73,18 @@ var vm = function () {
         self.search();
         return true;
     };
+    
+    ko.bindingHandlers.cuttext = {
+                update: function (element, valueAccessor,allBindingsAccessor) {
+                    var length = allBindingsAccessor().length || 4294967295; //SAFE MAX_INT
+                    var trailing = allBindingsAccessor().trailing || "";
+                    var value = ko.utils.unwrapObservable(valueAccessor());
+                    if (length<value.length){
+                        value = value.substr(0,length)+trailing;
+                    }
+                    $(element).text(value);
+                }
+        };
 
     //--- Page Events
     self.activate = function (id) {

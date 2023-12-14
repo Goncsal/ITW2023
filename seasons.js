@@ -3,7 +3,7 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Vari�veis locais
     var self = this;
-    self.valor = ko.observable("")
+    self.value = ko.observable("")
     self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Seasons');
     self.displayName = 'NBA Seasons List';
     self.error = ko.observable('');

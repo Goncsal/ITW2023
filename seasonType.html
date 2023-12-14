@@ -59,6 +59,8 @@
             /*background-image: url("https://wallpapers-hub.art/wallpaper-images/128139.jpg");*/
             background-image: url("nbabgfiltered2.png");
             background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
         }
     </style>
 </head>
@@ -101,16 +103,23 @@
         </header>
     </div>
     <!-- Working Area -->
-    <div class="container">
-        <div class="border-bottom py-2 mb-2">
-            <h2 data-bind="text:displayName"></h2>
+    <div class="container vh-100">
+        <div class=" py-2 mb-2">
+            <h2 data-bind="text:displayName" style="float: left;"></h2>
         </div>
-        <input class="form-control" style="float: right; padding: 0; margin-top: 0; margin-bottom: auto;text-align: center;" type="text" placeholder="Search" aria-label="Search" id="srch" data-bind="event: {keydown: onChange}, value: valor">
+        <br>
+        <hr class="border-3">
+        
+        <!-- ko if:records().length === 0 -->
+        <p class="mt-5 text-center">
+            No Results Found.
+        </p>
+        <!-- /ko -->
         <!-- ko if:records().length > 0 -->
         <div class="row small">
-            <p class=" col-4 mr-auto pt-2">
+            <p class=" col-4 mr-auto pt-2" style="text-align: left;" >
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
-                <span data-bind="html: 'Seasons Types: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
+                <span data-bind="html: 'Teams: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
             <div class="col-8 my-0 pt-3">
                 <ul class="pagination float-end" style="margin: 0%;padding: 0;">

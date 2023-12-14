@@ -21,6 +21,11 @@ body {
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
+.imagem-jogador{
+  width: 400px;
+  height: 400px;
+}
+
 .cover-container {
   max-width: 42em;
 }
