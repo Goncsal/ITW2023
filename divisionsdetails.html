@@ -101,41 +101,38 @@
         </header>
     </div>
     <!-- Work Area-->
-    <!-- Work Area-->
     <div class="container">
         <div class="py-2 border-bottom mb-3">
             <h2 data-bind="text:Name() + '['+ Id() + ']'"></h2>
         </div>
-
-        <div class="row border-bottom g-2">
-            <div class="col-2">Id</div><div class="col-10" data-bind="text: Id"></div>
+        <div class="row g-2">
+            <div class="col-6"><h1>Id</h1></div>
+            <div class="col-6"><h1>Division Name</h1></div>
         </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Division Name</div><div class="col-10" data-bind="text: Name"></div>
+        <div class="row g-2 mb-4">
+            <div class="col-6" data-bind="text: Id"></div>
+            <div class="col-6" data-bind="text: Name"></div>
         </div>
+        <a href="./divisions.html" class="btn btn-default btn-sm small rounded-5"><i class="fa fa-list"></i> Back to List</a>
 
-        <div class="row border-bottom g-2" data-bind="visible: Logo() != '' && Logo() != null">
-            <div class="col-2">Logo</div><div class="small col-10">
-                <img class="img-thumbnail" data-bind="attr:{src: Logo}"><br />
+        <div class="row" data-bind="visible: Logo() != '' && Logo() != null">
+            <div class="small col-12">
+                <img class="img-thumbnail" data-bind="attr:{src: Logo}" style="width: 30%;"><br />
                 <i class="fa fa-link"></i><a class="link-dark text-decoration-none" data-bind="attr: { href: Logo }, text: Logo" target="_blank"></a>
             </div>
         </div>
-
-        <div class="row g-1" data-bind="foreach: Teams">
+    </div>
+    <div class="row border-bottom g-2 m-auto" style="text-align: left;">
+        <h1 class="col-4"><a data-bs-toggle="collapse" data-bs-target="#demo"><i class="fa-solid fa-circle-chevron-down"></i></a>Total Teams</h1>
+        <div class="row g-1 collapse" data-bind="foreach: Teams" id="demo">
             <div class="col-3">
                 <div class="border rounded py-1 px-2 small">
-                    <i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span>
-
+                    <!-- <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span> -->
+                    <a data-bind="attr: { href: './teamsdetails.html?id=' + Id + '?acronym=' +  Acronym}" style="text-decoration: none; color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span></a>
                 </div>
             </div>
         </div>
-        <!-- /ko -->
-
-        <a href="divisions.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-        <!-- Modal -->
     </div>
-    </div>
-    <!-- /ko -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

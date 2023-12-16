@@ -149,28 +149,30 @@
                 </div>
             </div>
         </div>
-        <h1>Total Teams Played</h1>
-
-        <div class="row g-1 mb-3" data-bind="foreach: Teams">
-            <div class="col-6">
-                <div class="border rounded py-1 px-2 small">
-                    <a data-bind="attr: { href: './teamsdetails.html?id=' + Id + '?acronym=' +  Acronym}" style="text-decoration: none;color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span></a>
-
-                </div>
-            </div>
-        </div>
-        <br>
-        <h1>Total Seasons Played</h1>
-        <div class="row g-1 mb-3" data-bind="foreach: Seasons">
+    </div>
+    <div class="row border-bottom g-2 m-auto" style="text-align: left;">
+        <h1 class="col-4"><a data-bs-toggle="collapse" data-bs-target="#demo"><i class="fa-solid fa-circle-chevron-down"></i></a>Total Teams Played</h1>
+        <div class="row g-1 collapse" data-bind="foreach: Teams" id="demo">
             <div class="col-3">
                 <div class="border rounded py-1 px-2 small">
-                    <a data-bind="attr: { href: './seasonsDetails.html?id=' + Id}" style="text-decoration: none; color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span></a>
-
+                    <!-- <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span> -->
+                    <a data-bind="attr: { href: './teamsdetails.html?id=' + Id + '?acronym=' +  Acronym}" style="text-decoration: none; color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span></a>
                 </div>
             </div>
         </div>
-        <br>
     </div>
+    <div class="row border-bottom g-2 m-auto" style="text-align: left;">
+        <h1 class="col-4"><a data-bs-toggle="collapse" data-bs-target="#demo1"><i class="fa-solid fa-circle-chevron-down"></i></a>Total Seasons Played</h1>
+        <div class="row g-1 collapse" data-bind="foreach: Seasons" id="demo1">
+            <div class="col-3">
+                <div class="border rounded py-1 px-2 small">
+                    <!-- <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span> -->
+                    <a data-bind="attr: { href: './seasonsDetails.html?id=' + Id}" style="text-decoration: none; color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- /ko -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

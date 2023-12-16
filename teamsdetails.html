@@ -101,39 +101,6 @@
         </header>
     </div>
     <!-- Work Area-->
-    <!--
-    <div class="container">
-        <div class="py-2 border-bottom mb-3">
-            <h2 data-bind="text:Name() + '['+ Id() + ']'"></h2>
-        </div>
-
-        <div class="row border-bottom g-2">
-            <div class="col-2">Id</div><div class="col-10" data-bind="text: Id"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Name</div><div class="col-10" data-bind="text: Acronym"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">ConferenceName</div><div class="col-10" data-bind="text: ConferenceName"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">ConferenceId</div><div class="col-10" data-bind="text: ConferenceId"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">DivisionName</div><div class="col-10" data-bind="text: DivisionName"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">StateName</div><div class="col-10" data-bind="text: StateName"></div>
-        </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">City</div><div class="col-10" data-bind="text: City"></div>
-        </div>
-        <div class="row border-bottom g-2" data-bind="visible: Logo() != '' && Logo() != null">
-            <div class="col-2">Logo</div><div class="small col-10">
-                <img class="img-thumbnail" data-bind="attr:{src: Logo}" style="width: 20%;"><br />
-                <i class="fa fa-link"></i><a class="link-dark text-decoration-none" data-bind="attr: { href: Logo }, text: Logo" target="_blank"></a>
-            </div>
-        </div>-->
         <!-- ko if:Name().length > 0 -->
         <div class="container-fluid">
             <div class="row mb-6">
@@ -174,7 +141,9 @@
             </div>
         </div>
         <!-- /ko -->
-        <div class="row g-2" data-bind="visible: Logo() != '' && Logo() != null">
+        <a href="./teams.html" class="btn btn-default btn-sm small rounded-5 mb-0"><i class="fa fa-list m-0"></i> Back to List</a>
+
+        <div class="row  mt-0" data-bind="visible: Logo() != '' && Logo() != null">
             <div class="col-0"></div><div class="small col-12">
                 <img class="img-thumbnail" data-bind="attr:{src: Logo}" style="width: 20%;"><br />
                 <i class="fa fa-link"></i><a class="link-dark text-decoration-none" data-bind="attr: { href: Logo }, text: Logo" target="_blank"></a>
@@ -210,17 +179,9 @@
                     </div>
                 </div>
             </div>
+         </div>
+    </div>
 
-
-        </div>
-
-        <!-- /ko -->
-    </div>
-    <!-- Modal -->
-    </div>
-    </div>
-    </div>
-    <!-- /ko -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

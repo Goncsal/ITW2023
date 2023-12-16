@@ -101,45 +101,43 @@
         </header>
     </div>
     <!-- Work Area-->
-    <!-- Work Area-->
     <div class="container">
         <div class="py-2 border-bottom mb-3">
             <h2 data-bind="text:'['+ Id() + ']'"></h2>
         </div>
-
-        <div class="row border-bottom g-2">
-            <div class="col-2">Id</div><div class="col-10" data-bind="text: Id"></div>
+        <div class="row g-2">
+            <div class="col-6"><h1>Id</h1></div>
+            <div class="col-6"><h1>Season</h1></div>
         </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Season</div><div class="col-10" data-bind="text: Season"></div>
+        <div class="row g-2 mb-4">
+            <div class="col-6" data-bind="text: Id"></div>
+            <div class="col-6" data-bind="text: Season"></div>
         </div>
 
-        <h1>List of All teams</h1>
-
-        <div class="row g-1" data-bind="foreach: Teams">
+        <a href="./seasons.html" class="btn btn-default btn-sm small rounded-5"><i class="fa fa-list"></i> Back to List</a>
+    </div>
+    <div class="row border-bottom g-2 m-auto" style="text-align: left;">
+        <h1 class="col-4"><a data-bs-toggle="collapse" data-bs-target="#demo"><i class="fa-solid fa-circle-chevron-down"></i></a>Total Teams</h1>
+        <div class="row g-1 collapse" data-bind="foreach: Teams" id="demo">
             <div class="col-3">
                 <div class="border rounded py-1 px-2 small">
-                    <i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span>
-
+                    <!-- <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span> -->
+                    <a data-bind="attr: { href: './teamsdetails.html?id=' + Id + '?acronym=' +  Acronym}" style="text-decoration: none; color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span></a>
                 </div>
             </div>
         </div>
-        <h1>List of All Players</h1>
-        <div class="row g-1" data-bind="foreach: Players">
+    </div>
+    <div class="row border-bottom g-2 m-auto" style="text-align: left;">
+        <h1 class="col-4"><a data-bs-toggle="collapse" data-bs-target="#demo1"><i class="fa-solid fa-circle-chevron-down"></i></a>Total Players</h1>
+        <div class="row g-1 collapse" data-bind="foreach: Players" id="demo1">
             <div class="col-3">
                 <div class="border rounded py-1 px-2 small">
-                    <i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span>
-
+                    <!-- <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span> -->
+                    <a data-bind="attr: { href: './playerDetail.html?id=' + Id}" style="text-decoration: none; color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span></a>
                 </div>
             </div>
         </div>
-        <!-- /ko -->
-
-        <a href="Teams.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
-        <!-- Modal -->
     </div>
-    </div>
-    <!-- /ko -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

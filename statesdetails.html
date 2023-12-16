@@ -63,7 +63,7 @@
     </style>
 </head>
 
-<body class="h-100  text-center text-white bg-dark bg-gradient-gray">
+<body class="h-100 text-center text-white bg-dark bg-gradient-gray">
     <div class="navbar-logo navbar-brand">
         <a href="index.html"><img src="Nba_logo_PNG3.png" alt="logo" height="60" width="140" /></a>
     </div>
@@ -107,44 +107,47 @@
             <h2 data-bind="text:Name()+' [' + Id() + ']'"></h2>
         </div>
         <!-- ko if:Name().length > 0 -->
-        <div class="row border-bottom g-2">
-            <div class="col-2">Id</div>
-            <div class="col-10" data-bind="text: Id"></div>
+        <div class="row g-2">
+            <div class="col-6"><h1>Id</h1></div>
+            <div class="col-6"><h1>Name</h1></div>
         </div>
-        <div class="row border-bottom g-2">
-            <div class="col-2">Name</div>
-            <div class="col-10" data-bind="text: Name"></div>
+        <div class="row g-2 mb-4">
+            <div class="col-6" data-bind="text: Id"></div>
+            <div class="col-6" data-bind="text: Name"></div>
         </div>
-        <div class="row border-bottom g-2" data-bind="visible: Flag() != '' && Flag() != null">
-            <div class="col-2">Flag</div>
-            <div class="small col-10">
-                <img class="img-thumbnail" data-bind="attr:{src: Flag}"><br />
+        <a href="./states.html" class="btn btn-default btn-sm small rounded-5"><i class="fa fa-list"></i> Back to List</a>
+
+        <div class="row" data-bind="visible: Flag() != '' && Flag() != null">
+            <div class="small col-12">
+                <img class="img-thumbnail" data-bind="attr:{src: Flag}" style="width: 30%;"><br />
                 <i class="fa fa-link"></i><a class="link-dark text-decoration-none" data-bind="attr: { href: Flag}, text: Flag" target="_blank"></a>
-            </div>
-        </div>
-
-        <h1>List of Arenas</h1>
-
-        <div class="row g-1" data-bind="foreach: Arenas">
-            <div class="col-3">
-                <div class="border rounded py-1 px-2 small">
-                    <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span>
-
-                </div>
-            </div>
-        </div>
-        <h1>List of Teams</h1>
-        <div class="row g-1" data-bind="foreach: Teams">
-            <div class="col-3">
-                <div class="border rounded py-1 px-2 small">
-                    <i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span>
-
-                </div>
             </div>
         </div>
         <!-- /ko -->
     </div>
-    <!-- /ko -->
+    <div class="row border-bottom g-2 m-auto" style="text-align: left;">
+        <h1 class="col-4"><a data-bs-toggle="collapse" data-bs-target="#demo1"><i class="fa-solid fa-circle-chevron-down"></i></a>Total Arenas</h1>
+        <div class="row g-1 collapse" data-bind="foreach: Arenas" id="demo1">
+            <div class="col-3">
+                <div class="border rounded py-1 px-2 small">
+                    <!-- <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span> -->
+                    <a data-bind="attr: { href: './arenaDetails.html?id=' + Id}" style="text-decoration: none; color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row border-bottom g-2 m-auto" style="text-align: left;">
+        <h1 class="col-4"><a data-bs-toggle="collapse" data-bs-target="#demo"><i class="fa-solid fa-circle-chevron-down"></i></a>Total Teams Played</h1>
+        <div class="row g-1 collapse" data-bind="foreach: Teams" id="demo">
+            <div class="col-3">
+                <div class="border rounded py-1 px-2 small">
+                    <!-- <i class="fa-solid fa-basketball"></i><span data-bind="text: Id"></span> -->
+                    <a data-bind="attr: { href: './teamsdetails.html?id=' + Id + '?acronym=' +  Acronym}" style="text-decoration: none; color: white;"><i class="fa-solid fa-basketball"></i><span data-bind="text: Name"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
