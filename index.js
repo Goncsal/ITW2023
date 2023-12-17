@@ -28,3 +28,17 @@ window.addEventListener('scroll', function() {
   prevScrollPos = currentScrollPos;
 });
 
+function randomly(){
+  
+  var list = ["./playerDetail.html?id=920","./playerDetail.html?id=78095","./playerDetail.html?id=101161","./playerDetail.html?id=1629597","./playerDetail.html?id=977","./playerDetail.html?id=920","./playerDetail.html?id=926","./playerDetail.html?id=78178","./playerDetail.html?id=77504","./playerDetail.html?id=201189"]
+  var elemlength = list.length;
+  var randomnum = Math.floor(Math.random()*elemlength);
+  var link = list[randomnum];
+
+  $("#random").attr("href", link);
+}
+
+
+ 
+
+
