@@ -59,41 +59,42 @@
   </style>
   </head>
 <body class="h-100  text-center text-white bg-dark bg-gradient-gray">
-    <div class="navbar-logo navbar-brand">
+    <div class="navbar-logo d-none d-md-block d-lg-block">
         <a href="index.html"><img src="Nba_logo_PNG3.png" alt="logo" height="60" width="140" /></a>
-    </div>
+      </div>
         
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
-            <div>
-                <nav class="navbar navbar-expand-md navbar-dark bg-opacity-10" aria-label="navbar">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 centernavitem">
-                                <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html" style="color: white"><i class="fa fa-soccer-ball-o text-warning"></i> Arenas</a></li>
-                                <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html" style="color: white"><i class="fa fa-user-o text-primary"></i> Players</a></li>
-                                <li class="nav-item"><a class="nav-link" aria-current="page" href="Teams.html" style="color: white"><i class="fa fa-flag-o text-danger"></i> Teams</a></li>
-                                <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html" style="color: white"><i class="fa fa-map-marker text-success"></i> States</a></li>
-                                <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html" style="color: white"><i class="fa fa-bookmark-o text-info "></i> Seasons</a></li>
-                                <li class="nav-item dropdown">
-                                
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; margin-top: 20px;"></a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                        <li><a class="dropdown-item" href="divisions.html">Divisions</a></li>
-                                        <li><a class="dropdown-item" href="PlayersPositions.html">Positions</a></li>
-                                        <li><a class="dropdown-item" href="conferences.html">Conferences</a></li>
-                                        <li><a class="dropdown-item" href="seasonType.html">Seasons Types</a></li>
-                                        <li><a class="dropdown-item" href="Maps.html">Maps</a></li>
-                                    </ul>
-                                </li>
+          <div>
+            <nav class="navbar navbar-expand-md navbar-dark bg-opacity-10" aria-label="navbar">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCol" aria-controls="navbarCol" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                 </button>
+    
+                <div class="collapse navbar-collapse" id="navbarCol">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 centernavitem">
+                      <li class="nav-item"><a class="nav-link" aria-current="page" href="arenas.html" style="color: white"><i class="fa fa-soccer-ball-o text-warning"></i> Arenas</a></li>
+                      <li class="nav-item"><a class="nav-link" aria-current="page" href="players.html" style="color: white"><i class="fa fa-user-o text-primary"></i> Players</a></li>
+                      <li class="nav-item"><a class="nav-link" aria-current="page" href="Teams.html" style="color: white"><i class="fa fa-flag-o text-danger"></i> Teams</a></li>
+                      <li class="nav-item"><a class="nav-link" aria-current="page" href="states.html" style="color: white"><i class="fa fa-map-marker text-success"></i> States</a></li>
+                      <li class="nav-item"><a class="nav-link" aria-current="page" href="seasons.html" style="color: white"><i class="fa fa-bookmark-o text-info "></i> Seasons</a></li>
+                      <li class="nav-item dropdown">
+                          
+                          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; margin-top: 20px;"></a>
+                          <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                              <li><a class="dropdown-item" href="divisions.html">Divisions</a></li>
+                              <li><a class="dropdown-item" href="PlayersPositions.html">Players Positions</a></li>
+                              <li><a class="dropdown-item" href="conferences.html">Conferences</a></li>
+                              <li><a class="dropdown-item" href="seasonType.html">Seasons Types</a></li>
+                              <li><a class="dropdown-item" href="" onclick="alert('Em Desenvolvimento')">Charts</a></li>
                             </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
         </header>
     </div>
     <!-- Working Area -->
@@ -101,6 +102,8 @@
     <div class="container vh-100">
         <div class=" py-2 mb-2">
             <input class="form-control-sm" style="float: right; padding: 0; margin-top: 1%; margin-bottom: 0;text-align: center;width: 20%;" type="text" placeholder="Search" aria-label="Search"  id="srch" data-bind="event: {input: onChange}, text: value;">
+            <a href="playersFavs.html"><button class="btn btn-outline-danger"  style="float: right; padding: 0;padding-top: 0.18%;padding-bottom: 0.18%; margin-top: 1%; margin-bottom: 0;text-align: center;width:10%;" >Check Favourites</button></a>
+
             <h2 data-bind="text:displayName" style="float: left;"></h2>
 
         </div>
@@ -116,7 +119,8 @@
         <div class="row small">
             <p class=" col-4 mr-auto pt-2" style="text-align: left;" >
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
-                <span data-bind="html: 'Teams: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
+                <span data-bind="html: 'Players: '+ totalRecords()"></span>
+                
             </p>
             <div class="col-8 my-0 pt-3">
                 <ul class="pagination float-end" style="margin: 0%;padding: 0;">
@@ -168,8 +172,7 @@
                     <td class="align-middle" data-bind="text:DraftYear"></td>
                     <td class="text-end">
                         <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./playerDetail.html?id=' + Id }"><i class="fa fa-eye" title="Show details"></i></a>
-                        <button class="btn btn-default btn-xs"><i class="fa fa-heart-o" data-bind="attr : { 'id': 'favourite_' + Id }" title="Add to favorites"></i></button>
-                    </td>
+                        <button class="btn btn-default btn-xs"><i class="fa fa-heart-o" data-bind="attr:{id:'fav_'+Id}, click: function (data) {$root.favoritePlayer(Id)}" id="fav" title="Add to favorites"></i></button>                    </td>
                 </tr>
             </tbody>
         </table>

@@ -4,58 +4,17 @@ var vm = function () {
     //---Variáveis locais
     var self = this;
     self.value = ko.observable("")
-    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Players');
-    self.displayName = 'NBA Players List';
+    self.nameplayer = ko.observable("")
+    self.baseUri = ko.observable('http://192.168.160.58/NBA/API/Arenas');
+    self.displayName = 'NBA Arenas List';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
     self.currentPage = ko.observable(1);
-    self.pagesize = ko.observable(20);
+    self.pagesize = ko.observable(25);
     self.totalRecords = ko.observable(50);
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(false);
-    self.favoritePlayer = function (id) {
-        console.log('favourite click!')
-        $('#fav_'+id).addClass('text-danger')
-        localStorage.setItem("class", "text-danger");
-
-        if (JSON.parse(window.localStorage.getItem('favPlayers0')) == null) {
-            $('#fav_'+id).addClass('text-danger')
-            localStorage.setItem("addClass", "text-danger");
-
-
-            console.log('no favPlayers in local storage, lets create it');
-            window.localStorage.setItem('favPlayers0', '[]');
-            var a = JSON.parse(window.localStorage.getItem('favPlayers0'));
-            for(var i=0;i<self.records().length;i++){
-                if(self.records()[i].Id == id){
-                b = a.concat(self.records()[i]);
-            }}
-            window.localStorage.setItem('favPlayers0', JSON.stringify(b));
-        } else {
-            var c = JSON.parse(window.localStorage.getItem('favPlayers0'))
-            for (var i = 0; i < c.length; i++) {
-                if (id == c[i].Id) {
-                    c.splice(i, 1); // remove the item at index i
-                    window.localStorage.setItem('favPlayers0', JSON.stringify(c)); // update the local storage
-                    console.log('Player unfavourited')
-                    console.log(JSON.parse(window.localStorage.getItem('favPlayers0')))
-                    $('#fav_'+id).removeClass('text-danger')
-                    localStorage.setItem("removeClass", "text-danger");
-
-                    return false
-                }
-            }
-            var a = JSON.parse(window.localStorage.getItem('favPlayers0'));
-            for(var i=0;i<self.records().length;i++){
-                if(self.records()[i].Id == id){
-                b = a.concat(self.records()[i]);
-            }}
-            window.localStorage.setItem('favPlayers0', JSON.stringify(b));
-            console.log('Player not favourited, added to favourites')
-        }
-        console.log(JSON.parse(window.localStorage.getItem('favPlayers0')))
-    }
     self.previousPage = ko.computed(function () {
         return self.currentPage() * 1 - 1;
     }, self);
@@ -95,7 +54,7 @@ var vm = function () {
                 self.activate(pg);
             }
         } else {
-            var changeUrl = 'http://192.168.160.58/NBA/API/Players/Search?q=' + $("#srch").val();
+            var changeUrl = 'http://192.168.160.58/NBA/API/Arenas/Search?q=' + $("#srch").val();
         ajaxHelper(changeUrl, 'GET').done(function(data) {
             console.log(data.length)
             if (data.length == 0) {
@@ -104,7 +63,6 @@ var vm = function () {
             self.totalPages(1)
             console.log(data);
             //showLoading();
-
             self.records(data);
             self.totalRecords(data.length);
            // hideLoading();
@@ -116,26 +74,14 @@ var vm = function () {
         self.search();
         return true;
     };
-    
-    // ko.bindingHandlers.cuttext = {
-        //         update: function (element, valueAccessor,allBindingsAccessor) {
-        //             var length = allBindingsAccessor().length || 4294967295; //SAFE MAX_INT
-        //             var trailing = allBindingsAccessor().trailing || "";
-        //             var value = ko.utils.unwrapObservable(valueAccessor());
-        //             if (length<value.length){
-        //                 value = value.substr(0,length)+trailing;
-        //             }
-        //             $(element).text(value);
-        //         }
-        // };
 
     //--- Page Events
     self.activate = function (id) {
-        console.log('CALL: getPlayers...');
+        console.log('CALL: getArenas...');
         var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
-            hideLoading();
+            //hideLoading();
             self.records(data.Records);
             self.currentPage(data.CurrentPage);
             self.hasNext(data.HasNext);
@@ -158,7 +104,7 @@ var vm = function () {
             data: data ? JSON.stringify(data) : null,
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("AJAX Call[" + uri + "] Fail...");
-                hideLoading();
+                //hideLoading();
                 self.error(errorThrown);
             }
         });
@@ -168,7 +114,7 @@ var vm = function () {
         const start = Date.now();
         while (Date.now() - start < milliseconds);
     }
-
+/*
     function showLoading() {
         $("#myModal").modal('show', {
             backdrop: 'static',
@@ -179,7 +125,7 @@ var vm = function () {
         $('#myModal').on('shown.bs.modal', function (e) {
             $("#myModal").modal('hide');
         })
-    }
+    }*/
 
     function getUrlParameter(sParam) {
         var sPageURL = window.location.search.substring(1),
@@ -197,7 +143,7 @@ var vm = function () {
     };
 
     //--- start ....
-    showLoading();
+    //showLoading();
     var pg = getUrlParameter('page');
     console.log(pg);
     if (pg == undefined)
@@ -210,16 +156,8 @@ var vm = function () {
 
 $(document).ready(function () {
     console.log("ready!");
-    // $('#fav').each(function() {
-    //     if (JSON.parse(window.localStorage.getItem('favPlayers0')) != null) {
-    //         $(this).addClass('text-danger');
-    //     }
-    //  });
-
-     
     ko.applyBindings(new vm());
 });
 
 $(document).ajaxComplete(function (event, xhr, options) {
-    $("#myModal").modal('hide');
-})
+    $("#myModal").modal('hide');});

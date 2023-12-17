@@ -19,6 +19,9 @@ var vm = function () {
     self.Capacity = ko.observable('');
     self.Opened = ko.observable('');
     self.Photo = ko.observable('');
+    self.Lon = ko.observable('');
+    self.Lat = ko.observable('');
+
 
     //--- Page Events
     self.activate = function (id) {
@@ -38,9 +41,23 @@ var vm = function () {
             self.Capacity(data.Capacity);
             self.Opened(data.Opened);
             self.Photo(data.Photo);
+            self.Lon(data.Lon);
+            self.Lat(data.Lat);
+
         });
     };
-
+    self.lat1 = ko.computed(function(){
+        return self.Lat - 0.3}
+    );
+    self.lat2 = ko.computed(function(){
+        return self.Lat + 0.3}
+    );
+    self.lon1 = ko.computed(function(){
+        return self.Lon - 0.3}
+    );
+    self.lon2 = ko.computed(function(){
+        return self.Lon + 0.3}
+    );
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
