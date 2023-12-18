@@ -14,6 +14,14 @@ var vm = function () {
     self.totalRecords = ko.observable(50);
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(false);
+    self.favsstill = function(Id){
+        a = JSON.parse(window.localStorage.getItem('favPlayers0'));
+        for (var i = 0; i < a.length; i++) {
+            for(var j=0;j<self.records().length;j++){
+            if(a[i].Id==self.records()[j].Id){
+            $('#fav_'+a[i].Id).addClass('text-danger')
+            }}}
+    }
     self.favoritePlayer = function (id) {
         console.log('favourite click!')
         $('#fav_'+id).addClass('text-danger')
@@ -84,6 +92,7 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+
     self.search = function() {
         if ($("#srch").val() === "") {
             //showLoading();
@@ -143,6 +152,8 @@ var vm = function () {
             self.pagesize(data.PageSize)
             self.totalPages(data.TotalPages);
             self.totalRecords(data.TotalRecords);
+            self.favsstill(data.Id)
+
             //self.SetFavourites();
         });
     };
@@ -210,11 +221,6 @@ var vm = function () {
 
 $(document).ready(function () {
     console.log("ready!");
-    // $('#fav').each(function() {
-    //     if (JSON.parse(window.localStorage.getItem('favPlayers0')) != null) {
-    //         $(this).addClass('text-danger');
-    //     }
-    //  });
 
      
     ko.applyBindings(new vm());
