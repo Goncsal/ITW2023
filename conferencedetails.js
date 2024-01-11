@@ -26,6 +26,7 @@ var vm = function () {
             self.Divisions(data.Divisions);
             self.Teams(data.Teams);
             self.Logo(data.Logo);
+            
         });
     };
 

@@ -42,6 +42,9 @@ var vm = function () {
             self.DraftYear(data.DraftYear);
             self.School(data.School);
             self.Photo(data.Photo);
+            if (self.Photo() === null){
+                self.Photo('No-image-found.jpg')
+            }
             self.Seasons(data.Seasons);
             self.Teams(data.Teams);
         });

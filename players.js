@@ -26,7 +26,6 @@ var vm = function () {
         console.log('favourite click!')
         $('#fav_'+id).addClass('text-danger')
         localStorage.setItem("class", "text-danger");
-
         if (JSON.parse(window.localStorage.getItem('favPlayers0')) == null) {
             $('#fav_'+id).addClass('text-danger')
             localStorage.setItem("addClass", "text-danger");
@@ -94,32 +93,36 @@ var vm = function () {
     };
 
     self.search = function() {
-        if ($("#srch").val() === "") {
-            //showLoading();
-            var pg = getUrlParameter('page');
-            console.log(pg);
-            if (pg == undefined){
-                self.activate(1);
-            }else {
-                self.activate(pg);
-            }
-        } else {
-            var changeUrl = 'http://192.168.160.58/NBA/API/Players/Search?q=' + $("#srch").val();
-        ajaxHelper(changeUrl, 'GET').done(function(data) {
-            console.log(data.length)
-            if (data.length == 0) {
-                self.value = "";
-            }
-            self.totalPages(1)
-            console.log(data);
-            //showLoading();
+        let a = $("#srch").val().length
+        console.log(a)
+        
+            if ($("#srch").val() === "") {
+                //showLoading();
+                var pg = getUrlParameter('page');
+                console.log(pg);
+                if (pg == undefined){
+                    self.activate(1);
+                }else {
+                    self.activate(pg);
+                }
+            } else {
+                if (a > 2){
+                var changeUrl = 'http://192.168.160.58/NBA/API/Players/Search?q=' + $("#srch").val();
+            ajaxHelper(changeUrl, 'GET').done(function(data) {
+                console.log(data.length)
+                if (data.length == 0) {
+                    self.value = "";
+                }
+                self.totalPages(1)
+                console.log(data);
+                //showLoading();
 
-            self.records(data);
-            self.totalRecords(data.length);
-           // hideLoading();
-            });
-        };
-    };
+                self.records(data);
+                self.totalRecords(data.length);
+            // hideLoading();
+                });
+            };
+    }};
 
     self.onChange = function() {
         self.search();

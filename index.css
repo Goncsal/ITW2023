@@ -56,3 +56,11 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+
+#modalcontent{
+  backdrop-filter: blur(50);
+  color:white;
+  background-color: #b08e71;
+  border: 2px solid #cf7325;
+  border-radius: 5px;
+}

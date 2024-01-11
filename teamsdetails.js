@@ -45,6 +45,9 @@ var vm = function () {
             self.StateName(data.StateName);
             self.City(data.City);
             self.Logo(data.Logo);
+            if (self.Logo() === null){
+                self.Logo('No-image-found.jpg')
+            }
             self.History(data.History);
             self.Players(data.Players);
             self.Seasons(data.Seasons);

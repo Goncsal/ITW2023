@@ -41,6 +41,9 @@ var vm = function () {
             self.Capacity(data.Capacity);
             self.Opened(data.Opened);
             self.Photo(data.Photo);
+            if (self.Photo() === null){
+                self.Photo('No-image-found.jpg')
+            }
             self.Lon(data.Lon);
             self.Lat(data.Lat);
 
